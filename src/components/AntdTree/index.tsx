@@ -6,10 +6,6 @@ import { EventDataNode } from "antd/es/tree";
 const AntdTree: FC = () => {
     const [treeData, setTreeData] = useState<TreeDataNode[]>(defaultTreeData);
 
-    const handleDragEnter: TreeProps['onDragEnter'] = (info) => {
-        // console.log(info);
-    };
-
     const handleDrop: TreeProps['onDrop'] = (info) => {
         console.log(info);
         const dragNode = info.dragNode;
@@ -68,7 +64,6 @@ const AntdTree: FC = () => {
         <Tree 
             treeData={treeData}
             draggable
-            onDragEnter={handleDragEnter}
             onDrop={handleDrop}/>
     )
 }
