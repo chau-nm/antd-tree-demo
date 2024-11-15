@@ -2,6 +2,7 @@ import { Tree, TreeDataNode, TreeProps } from "antd";
 import { FC, useState } from "react";
 import { treeData as defaultTreeData } from "../../fakeData/treeData";
 import { EventDataNode } from "antd/es/tree";
+import "./antdTree.scss";
 
 const AntdTree: FC = () => {
     const [treeData, setTreeData] = useState<TreeDataNode[]>(defaultTreeData);
@@ -64,7 +65,8 @@ const AntdTree: FC = () => {
         <Tree 
             treeData={treeData}
             draggable
-            onDrop={handleDrop}/>
+            onDrop={handleDrop}
+        />
     )
 }
 

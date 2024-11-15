@@ -1,0 +1,49 @@
+.ant-tree-list-holder-inner {
+    gap: 10px;
+
+    .ant-tree-node-content-wrapper {
+        height: 50px;
+        min-width: 500px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.2);
+        background-color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 2px 2px 10px 2px rgba($color: #000000, $alpha: 0.2);
+
+        &:hover {
+            background-color: white;
+        }
+    }
+
+    .ant-tree-switcher {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            width: 50px;
+            height: 50px;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .ant-tree-draggable-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
