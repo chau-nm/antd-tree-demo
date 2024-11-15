@@ -21,7 +21,7 @@ const AntdTree: FC<AntdTreeProps> = ({
 
         let newTreeData = [...treeData];
         removeNode(newTreeData, dragNode);
-        newTreeData = insertNode(newTreeData, dragNode, dropNode, dropPosition, dropToGap, undefined);
+        newTreeData = insertNode(newTreeData, dragNode, dropNode, dropPosition, dropToGap);
         setTreeData(newTreeData);
     }
 
@@ -37,7 +37,7 @@ const AntdTree: FC<AntdTreeProps> = ({
         });
     }
 
-    const insertNode = (treeData: TreeDataNode[], dragNode: EventDataNode<TreeDataNode>, dropNode: EventDataNode<TreeDataNode>, dropPosition: number, dropToGap: boolean, parent: TreeDataNode | undefined) => {
+    const insertNode = (treeData: TreeDataNode[], dragNode: EventDataNode<TreeDataNode>, dropNode: EventDataNode<TreeDataNode>, dropPosition: number, dropToGap: boolean) => {
         const dropPos = dropNode.pos.split("-");
         const newPosition = dropPosition - Number(dropPos[dropPos.length - 1]);
 
@@ -59,7 +59,7 @@ const AntdTree: FC<AntdTreeProps> = ({
                 }
             } else {
                 if (data.children) {
-                    data.children = insertNode(data.children, dragNode, dropNode, dropPosition, dropToGap, data);
+                    data.children = insertNode(data.children, dragNode, dropNode, dropPosition, dropToGap);
                 }
             }
         }
