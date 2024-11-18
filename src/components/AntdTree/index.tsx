@@ -41,13 +41,14 @@ const AntdTree: FC<AntdTreeProps> = ({
         const dropPos = dropNode.pos.split("-");
         const newPosition = dropPosition - Number(dropPos[dropPos.length - 1]);
 
-        for (let data of treeData) {
+        for (let i = 0; i < treeData.length; i++) {
+            const data = treeData[i];
             if (data.key === dropNode.key) {
                 if (dropToGap) {
                     if (newPosition === -1) {
-                        treeData.splice(0, 0, dragNode);
+                        treeData.splice(i, 0, dragNode);
                     } else {
-                        treeData.splice(dropPosition, 0, dragNode);
+                        treeData.splice(i + 1, 0, dragNode);
                     }
                     return treeData;
                 } else {
